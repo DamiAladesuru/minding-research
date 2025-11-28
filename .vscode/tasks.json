@@ -1,0 +1,59 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve Jekyll Site",
+      "type": "shell",
+      "command": "bundle exec jekyll serve --host 0.0.0.0 --livereload",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Build Jekyll Site",
+      "type": "shell",
+      "command": "bundle exec jekyll build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "bundle install",
+      "problemMatcher": []
+    },
+    {
+      "label": "Create New Post",
+      "type": "shell",
+      "command": "echo '---\nlayout: post\ntitle: \"${input:postTitle}\"\ndate: $(date +%Y-%m-%d)\ncategories: ${input:category}\n---\n\nYour content here...' > _posts/$(date +%Y-%m-%d)-${input:postSlug}.md",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postTitle",
+      "type": "promptString",
+      "description": "Post title"
+    },
+    {
+      "id": "postSlug",
+      "type": "promptString",
+      "description": "Post slug (URL-friendly)"
+    },
+    {
+      "id": "category",
+      "type": "pickString",
+      "description": "Category",
+      "options": ["research", "tutorials", "general"],
+      "default": "research"
+    }
+  ]
+}

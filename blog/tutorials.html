@@ -1,0 +1,27 @@
+---
+layout: page
+title: Tutorial Posts
+permalink: /blog/tutorials/
+---
+
+<p>Step-by-step guides and tutorials.</p>
+
+<ul class="post-list">
+  {% for post in site.categories.tutorials %}
+  <li class="post-list-item">
+    <h3 class="post-list-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <p class="post-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </p>
+    {% if post.excerpt %}
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% if site.categories.tutorials.size == 0 %}
+<p>No tutorial posts yet. Check back soon!</p>
+{% endif %}

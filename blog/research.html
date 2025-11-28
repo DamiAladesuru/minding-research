@@ -1,0 +1,27 @@
+---
+layout: page
+title: Research Posts
+permalink: /blog/research/
+---
+
+<p>Posts about research findings and academic work.</p>
+
+<ul class="post-list">
+  {% for post in site.categories.research %}
+  <li class="post-list-item">
+    <h3 class="post-list-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <p class="post-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </p>
+    {% if post.excerpt %}
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% if site.categories.research.size == 0 %}
+<p>No research posts yet. Check back soon!</p>
+{% endif %}

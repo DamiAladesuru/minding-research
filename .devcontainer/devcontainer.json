@@ -1,0 +1,40 @@
+{
+  "name": "Jekyll Development",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "postCreateCommand": "bundle install",
+
+  "forwardPorts": [4000],
+  
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sissel.shopify-liquid",
+        "ginfuru.ginfuru-vscode-jekyll-syntax",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "files.associations": {
+          "*.html": "liquid"
+        }
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}

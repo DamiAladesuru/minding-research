@@ -1,0 +1,15 @@
+- title: Welcome
+  url: /
+
+- title: About Me
+  url: /about/
+
+- title: Blog
+  url: /blog/
+  dropdown:
+    - title: All Posts
+      url: /blog/
+    - title: Research
+      url: /blog/research/
+    - title: Tutorials
+      url: /blog/tutorials/

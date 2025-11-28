@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      <ul>
+        {% for item in site.data.navigation %}
+        <li {% if item.dropdown %}class="dropdown"{% endif %}>
+          <a href="{{ item.url | relative_url }}">
+            {{ item.title }}{% if item.dropdown %} ▾{% endif %}
+          </a>
+          {% if item.dropdown %}
+          <ul class="dropdown-menu">
+            {% for subitem in item.dropdown %}
+            <li><a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

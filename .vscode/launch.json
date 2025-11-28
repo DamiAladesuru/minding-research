@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Jekyll: Serve",
+      "type": "ruby",
+      "request": "launch",
+      "program": "${workspaceFolder}/vendor/bundle/ruby/3.2.0/bin/jekyll",
+      "args": ["serve", "--host", "0.0.0.0", "--livereload"]
+    }
+  ]
+}
