@@ -1,0 +1,15 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="80" height="80" rx="8" fill="#E8F4F8"/>
+  
+  <!-- Graduation Cap Icon -->
+  <g transform="translate(20, 25)">
+    <!-- Cap top -->
+    <path d="M20 0L0 8L20 16L40 8L20 0Z" fill="#4A90E2"/>
+    <!-- Cap base -->
+    <path d="M4 10V18C4 20 12 24 20 24C28 24 36 20 36 18V10L20 16L4 10Z" fill="#5BA3E8"/>
+    <!-- Tassel -->
+    <circle cx="38" cy="6" r="2" fill="#2E5C8A"/>
+    <line x1="38" y1="8" x2="38" y2="14" stroke="#2E5C8A" stroke-width="1"/>
+  </g>
+</svg>
