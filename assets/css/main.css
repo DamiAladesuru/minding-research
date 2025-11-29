@@ -34,6 +34,8 @@ a:hover {
   border-bottom: 1px solid #e8e8e8;
   padding: 20px 0;
   background: #fff;
+  position: relative;
+  z-index: 100;
 }
 
 .site-header .wrapper {
@@ -464,37 +466,15 @@ a:hover {
 
 /* Home Page Styles */
 .home {
-  padding: 40px 0;
+  padding: 0 0 40px;  /* Removed top padding */
 }
 
 /* Author Bio Section */
 .author-bio {
   text-align: center;
-  padding: 60px 0 40px;
+  padding: 30px 0 40px;  /* Increased from 20px to 30px for balance */
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 50px;
-}
-
-.author-avatar {
-  margin: 0 auto 20px;
-  width: 80px;
-  height: 80px;
-}
-
-.author-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.avatar-fallback {
-  width: 80px;
-  height: 80px;
-}
-
-.author-avatar img:not([src]) {
-  display: none;
 }
 
 .author-byline {
@@ -546,6 +526,26 @@ a:hover {
 
 .social-link.linkedin:hover {
   background: #006399;
+  color: white;
+}
+
+.social-link.scholar {
+  background: #4285F4;
+  color: white;
+}
+
+.social-link.scholar:hover {
+  background: #3367D6;
+  color: white;
+}
+
+.social-link.scholar {
+  background: #4285F4;
+  color: white;
+}
+
+.social-link.scholar:hover {
+  background: #357AE8;
   color: white;
 }
 
@@ -643,4 +643,13 @@ a:hover {
   color: #999;
   margin-left: 20px;
   white-space: nowrap;
+}
+
+/* Dropdown Debugging - Remove if not needed */
+.dropdown {
+  overflow: visible !important;
+}
+
+.site-nav {
+  overflow: visible !important;
 }
