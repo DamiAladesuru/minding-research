@@ -91,7 +91,6 @@ a:hover {
 }
 
 /* -------- Dropdown -------- */
-
 .dropdown {
   position: relative;
   overflow: visible;
@@ -115,6 +114,16 @@ a:hover {
   list-style: none;
   z-index: 9999;
   border-radius: 4px;
+}
+
+/* Invisible bridge to keep dropdown open while moving mouse */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .dropdown:hover .dropdown-menu {
