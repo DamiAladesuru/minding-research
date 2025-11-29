@@ -58,13 +58,19 @@ a:hover {
 }
 
 /* Navigation */
-.site-nav ul {
+.site-nav {
+  overflow: visible;
+}
+
+/* Only the TOP-LEVEL nav list should be flex */
+.site-nav > ul {
   list-style: none;
   display: flex;
   gap: 35px;
   margin: 0;
   padding: 0;
   align-items: center;
+  overflow: visible;
 }
 
 .site-nav li {
@@ -84,9 +90,11 @@ a:hover {
   text-decoration: none;
 }
 
-/* Dropdown */
+/* -------- Dropdown -------- */
+
 .dropdown {
   position: relative;
+  overflow: visible;
 }
 
 .dropdown > a {
@@ -105,7 +113,7 @@ a:hover {
   margin-top: 8px;
   padding: 0;
   list-style: none;
-  z-index: 1000;
+  z-index: 9999;
   border-radius: 4px;
 }
 
@@ -442,7 +450,8 @@ a:hover {
     gap: 20px;
   }
 
-  .site-nav ul {
+  /* Again: only the top-level nav list */
+  .site-nav > ul {
     flex-direction: column;
     gap: 15px;
     text-align: center;
